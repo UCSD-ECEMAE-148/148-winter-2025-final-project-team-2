@@ -1,0 +1,6 @@
+adafruit_continuous_servo_node: 
+  ros__parameters: 
+    bus_num : 1
+    continuous_servo_channel : 4
+    max_forward : 0.2
+    max_reverse : -0.2

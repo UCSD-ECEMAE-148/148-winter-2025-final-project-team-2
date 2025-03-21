@@ -1,0 +1,11 @@
+vesc_twist_node: 
+  ros__parameters: 
+    max_potential_rpm : 20000 
+    steering_polarity : 1 
+    throttle_polarity : 1 
+    zero_throttle  : -0.032
+    max_throttle : 0.382
+    min_throttle : 0.363 
+    max_right_steering : 0.792 
+    straight_steering : 0.0
+    max_left_steering : -0.831

@@ -1,0 +1,9 @@
+[submodule "ucsd_robocar_nav2_pkg/ucsd_robocar_actuator2_pkg"]
+	path = ucsd_robocar_nav2_pkg/ucsd_robocar_actuator2_pkg
+	url = https://gitlab.com/djnighti/ucsd_robocar_actuator2_pkg.git
+[submodule "ucsd_robocar_nav2_pkg/ucsd_robocar_sensor2_pkg"]
+	path = ucsd_robocar_nav2_pkg/ucsd_robocar_sensor2_pkg
+	url = https://gitlab.com/djnighti/ucsd_robocar_sensor2_pkg.git
+[submodule "ucsd_robocar_nav2_pkg/ucsd_robocar_lane_detection2_pkg"]
+	path = ucsd_robocar_nav2_pkg/ucsd_robocar_lane_detection2_pkg
+	url = https://gitlab.com/djnighti/ucsd_robocar_lane_detection2_pkg.git

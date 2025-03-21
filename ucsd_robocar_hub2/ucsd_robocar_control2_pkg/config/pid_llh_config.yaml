@@ -1,0 +1,16 @@
+pid_llh_node: 
+  ros__parameters: 
+    Kp_steering : 0.8
+    Ki_steering : 1.0E-3 
+    Kd_steering : 1.0E-3
+    integral_max: 1.0E-1
+    zero_speed  : 0.0
+    max_speed : 0.5 
+    min_speed : 0.4 
+    heading_upper_error_threshold : 1.6 
+    heading_lower_error_threshold : 0.10 
+    long_upper_error_threshold : 3.0 
+    long_lower_error_threshold : 0.10 
+    max_right_steering : 0.4 
+    max_left_steering : -0.4
+    Ts : 0.05

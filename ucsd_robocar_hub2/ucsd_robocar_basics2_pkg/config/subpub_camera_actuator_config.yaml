@@ -1,0 +1,4 @@
+subpub_camera_actuator_node: 
+  ros__parameters: 
+    live_camera_feed : 1
+    Ts : 0.05

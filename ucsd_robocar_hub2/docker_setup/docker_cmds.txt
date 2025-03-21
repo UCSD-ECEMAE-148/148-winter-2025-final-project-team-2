@@ -1,0 +1,57 @@
+#############################################################################
+Docker commands
+#############################################################################
+
+/////////////////
+GOTO run commands
+/////////////////
+
+docker run --name wip_name -it --privileged --net=host --env="DISPLAY" --device /dev/video0 --volume="$HOME/.Xauthority:/root/.Xauthority:rw" 
+docker exec -it wip_name bash 
+
+
+-----------------------------------------------------------------------------
+Building containers
+-----------------------------------------------------------------------------
+docker build .
+
+-----------------------------------------------------------------------------
+running containers
+-----------------------------------------------------------------------------
+
+docker run -it [IMAGE_ID] # first container
+docker run --name [new_name_of_container] -it --privileged --net=host --env="DISPLAY" --volume="$HOME/.Xauthority:/root/.Xauthority:rw" [image_name:tag_id]
+docker exec -it [CONTAINER_ID] bash # another container that is an extention of another container (like having 2 terminal tabs)
+
+-----------------------------------------------------------------------------
+Sharing containers (locally)
+-----------------------------------------------------------------------------
+docker save REPOSITORY:TAG > REPOSITORY.TAG.tar
+docker load < REPOSITORY.TAG.tar
+docker commit [CONTAINER_ID] [new_image_name] # if while inside the container and changes were made to it, this command will save those changes to a new image
+
+-----------------------------------------------------------------------------
+Sharing containers (remotly)
+-----------------------------------------------------------------------------
+
+docker tag [REPOSITORY:TAG] docker_username/[REPOSITORY:TAG] #must be done for new images that are not associated with your docker registry 
+docker push docker_username/[REPOSITORY:TAG]
+
+
+-----------------------------------------------------------------------------
+Viewing available images/containers
+-----------------------------------------------------------------------------
+docker ps -a # see all containers
+docker images # see all images
+
+
+-----------------------------------------------------------------------------
+Removing images/containers
+-----------------------------------------------------------------------------
+
+docker rm mycontainer
+docker rmi REPOSITORY:TAG
+docker rm -f $(docker ps -a -q) #delete ALL containers
+docker rmi -f $(docker images -q) #delete ALL images
+
+#############################################################################

@@ -1,0 +1,7 @@
+sub_lidar_node: 
+  ros__parameters: 
+    viewing_angle : 360
+    front_degree_angle : 0
+    right_degree_angle : 90
+    left_degree_angle : 270
+    live_laser_feed : 1

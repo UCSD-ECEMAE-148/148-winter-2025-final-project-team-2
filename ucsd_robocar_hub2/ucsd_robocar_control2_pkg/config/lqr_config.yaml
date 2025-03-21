@@ -1,0 +1,19 @@
+lqr_node: 
+  ros__parameters:
+    k1_gain: 1.0
+    k2_gain: 1.0
+    k3_gain: 1.0
+    k4_gain: 1.0
+    k1_coeff: [1.0, 1.0, 1.0]
+    k2_coeff: [1.0, 1.0, 1.0]
+    k3_coeff: [1.0, 1.0, 1.0]
+    k4_coeff: [1.0, 1.0, 1.0]
+    zero_speed  : 0.0
+    max_speed : 2.0 
+    min_speed : 0.363 
+    error_threshold : 0.16 
+    max_right_steering : 0.4 
+    max_left_steering : -0.4
+    Ts : 0.01
+    data_out_name : "lqr_test"
+    data_out_location : "/home/projects/ros2_ws/src/ucsd_robocar_hub2/ucsd_robocar_control2_pkg/data/"

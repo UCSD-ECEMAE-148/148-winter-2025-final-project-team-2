@@ -1,0 +1,15 @@
+lqr_node: 
+  ros__parameters:
+    zero_throttle  : -0.032
+    max_throttle : 0.382 
+    min_throttle : 0.363 
+    error_threshold : 0.16 
+    max_right_steering : 0.792 
+    max_left_steering : -0.831
+    Ts : 0.01
+    m : 630 
+    Lf : 0.42
+    Lr : 0.58
+    L : 2.9718
+    cf : 160000.0
+    cr : 160000.0

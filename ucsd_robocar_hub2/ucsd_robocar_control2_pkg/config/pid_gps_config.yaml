@@ -1,0 +1,22 @@
+pid_gps_node: 
+  ros__parameters: 
+    Kp_lateral : 0.05
+    Ki_lateral : 0.01 
+    Kd_lateral : 0.048
+    Kp_heading : 0.0
+    Ki_heading : 0.0 
+    Kd_heading : 0.0
+    integral_max : 0.0 
+    zero_speed : 0.0 
+    max_speed : 0.3
+    min_speed : 0.2
+    heading_upper_error_threshold : 0.25 
+    heading_lower_error_threshold : 0.1 
+    long_upper_error_threshold : 0.5 
+    long_lower_error_threshold : 0.05 
+    max_right_steering : 0.4 
+    max_left_steering : -0.4 
+    Ts : 0.05 
+    pid_calibration_config_location : "/home/projects/ros2_ws/src/ucsd_robocar_hub2/ucsd_robocar_control2_pkg/config/pid_gps_calibration_config.yaml"
+    pid_config_location : "/home/projects/ros2_ws/src/ucsd_robocar_hub2/ucsd_robocar_control2_pkg/config/pid_gps_config.yaml" 
+    show_logger: 1

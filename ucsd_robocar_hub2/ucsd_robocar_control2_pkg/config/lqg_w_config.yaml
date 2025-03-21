@@ -1,0 +1,12 @@
+lqg_w_node: 
+  ros__parameters:
+    zero_speed  : 0.0
+    max_speed : 1.0 
+    min_speed : 5.0 
+    max_right_steering : 0.4 
+    max_left_steering : -0.4
+    Ts : 0.05
+    lateral_error_threshold : 0.02
+    heading_error_threshold : 0.08
+    data_out_name : "icra_sim_test2"
+    data_out_location : "/home/projects/ros2_ws/src/ucsd_robocar_hub2/ucsd_robocar_control2_pkg/data/"

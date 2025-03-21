@@ -1,0 +1,103 @@
+Aimport rclpy
+from rclpy.node import Node
+from sensor_msgs.msg import Image
+from std_msgs.msg import String, Float32MultiArray
+from cv_bridge import CvBridge
+import cv2
+import numpy as np
+from depthai_sdk import OakCamera
+
+# ROS2 Node Name
+NODE_NAME = 'oakd_detection_node'
+DETECTION_TOPIC_NAME = '/oakd/detections'
+CAMERA_TOPIC_NAME = '/camera/color/image_raw'
+
+
+class OakDDetection(Node):
+    def __init__(self):
+        super().__init__(NODE_NAME)
+
+        # Publisher to send object detection data
+        self.detection_publisher = self.create_publisher(String, DETECTION_TOPIC_NAME, 10)
+
+        # Subscriber to process frames from the camera
+        self.camera_subscriber = self.create_subscription(
+            Image, CAMERA_TOPIC_NAME, self.process_frame, 10)
+        
+        self.bridge = CvBridge()
+
+        # Initialize Oak-D camera
+        self.oak = OakCamera()
+        color = self.oak.create_camera('color')
+
+        # Define Roboflow model
+        model_config = {
+            'source': 'roboflow',
+            'model': 'oakdlite/14',
+            'key': 'OGL63eoZjIfUoLaO6Imd'  # Replace with your actual API key
+        }
+
+        # Load the model and set up callback
+        self.nn = self.oak.create_nn(model_config, color)
+        self.oak.callback(self.nn, self.process_detections)
+
+        # Start camera stream
+        self.oak.start(blocking=False)  # Non-blocking
+
+        self.get_logger().info(f"{NODE_NAME} initialized successfully.")
+
+    def process_detections(self, packet):
+        """Callback function to handle object detections."""
+        detections = packet.detections
+        if detections:
+            detection_msg = String()
+            detection_data = []
+
+            for detection in detections:
+                label = detection.label_str  # Object class name
+                confidence = detection.confidence  # Confidence score
+                bbox = detection.bbox  # Bounding box object
+
+                # Convert bounding box to normalized coordinates
+                x_min, y_min, x_max, y_max = bbox.xmin, bbox.ymin, bbox.xmax, bbox.ymax
+
+                detection_data.append(f"{label} ({confidence*100:.2f}%) - "
+                                      f"x_min: {x_min}, y_min: {y_min}, x_max: {x_max}, y_max: {y_max}")
+
+            # Publish detection data
+            detection_msg.data = "; ".join(detection_data)
+            self.detection_publisher.publish(detection_msg)
+            self.get_logger().info(f"Published: {detection_msg.data}")
+
+    def process_frame(self, data):
+        """Processes an incoming camera frame."""
+        frame = self.bridge.imgmsg_to_cv2(data, desired_encoding='bgr8')
+        self.get_logger().info("Received camera frame.")
+
+        # Optional: Show camera feed
+        cv2.imshow("Camera Stream", frame)
+        cv2.waitKey(1)
+
+    def destroy(self):
+        """Properly shut down the node."""
+        self.oak.__exit__(None, None, None)  # Close Oak-D camera
+        cv2.destroyAllWindows()
+        self.get_logger().info(f"{NODE_NAME} shut down successfully.")
+        super().destroy_node()
+
+
+def main(args=None):
+    rclpy.init(args=args)
+    node = OakDDetection()
+
+    try:
+        rclpy.spin(node)
+    except KeyboardInterrupt:
+        node.get_logger().info("Shutting down node...")
+    finally:
+        node.destroy()
+        rclpy.shutdown()
+
+
+if __name__ == '__main__':
+    main()

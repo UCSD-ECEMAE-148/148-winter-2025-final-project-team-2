@@ -1,0 +1,21 @@
+1. in vm, ssh into jetson 
+	host_vm@ip_address:~$ ssh -X jetson@ip_address
+2. create Xauthority and give the following permissions
+	jetson@ip_address:~$ touch ~/.Xauthority
+	jetson@ip_address:~$ chown jetson:jetson ~/.Xauthority
+	jetson@ip_address:~$ chmod 0600 ~/.Xauthority
+3. generating display 
+	jetson@ip_address:~$ xauth generate $DISPLAY . trusted
+4. creating key
+	jetson@ip_address:~$ (xauth -f ~jetson/.Xauthority list|tail -1)
+5. adding key 
+	jetson@ip_address:~$ xauth list | grep unix`echo $DISPLAY | cut -c10-12` > /tmp/xaut
+6. verify key has been added
+	jetson@ip_address:~$ xauth list
+	amss-5u1o/unix:10  MIT-MAGIC-COOKIE-1  6f9bbaa8c214e3af91c0a17fb4ac4166
+7. exit session
+	jetson@ip_address:~$ exit
+8. in vm, ssh into jetson 
+	host_vm@ip_address:~$ssh -X jetson@ip_addres
+9. check if x_11 works
+	jetson@ip_address:~$ xeyes

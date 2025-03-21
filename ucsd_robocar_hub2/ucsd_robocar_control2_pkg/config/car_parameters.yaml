@@ -1,0 +1,6 @@
+Ts: 0.01 # Controller sample time
+mu: 0.01  # FIXME coeff of friction of driving surface
+m: 5  # FIXME total mass (kg)
+L: 0.325  # FIXME wheel base (meters)
+cf: 6.0  # FIXME front tire cornering stiffness
+cr: 18.0 # FIXME front tire cornering stiffness

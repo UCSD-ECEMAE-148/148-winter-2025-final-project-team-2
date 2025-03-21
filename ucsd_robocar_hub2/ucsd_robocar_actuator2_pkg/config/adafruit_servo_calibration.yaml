@@ -1,0 +1,6 @@
+adafruit_servo_node: 
+  ros__parameters: 
+    bus_num : 1
+    servo_channel : 3
+    max_limit : 180
+    min_limit : 0

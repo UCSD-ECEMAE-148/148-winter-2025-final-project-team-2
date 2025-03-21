@@ -1,0 +1,5 @@
+ldlidar:
+  ros__parameters:
+    serial_port: "/dev/ttyUSB1"
+    topic_name: 'scan'
+    lidar_frame: 'laser'

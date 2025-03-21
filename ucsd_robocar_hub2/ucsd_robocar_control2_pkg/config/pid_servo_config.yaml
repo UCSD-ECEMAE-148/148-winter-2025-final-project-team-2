@@ -1,0 +1,6 @@
+pid_servo_node: 
+  ros__parameters: 
+    Kp_steering : 0.8
+    Ki_steering : 1.0E-3 
+    Kd_steering : 1.0E-3
+    Ts : 0.05

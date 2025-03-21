@@ -1,0 +1,22 @@
+joy_node:
+  ros__parameters:
+    dev: /dev/input/js0
+    deadzone: 0.35
+    autorepeat_rate: 30.0
+
+teleop_twist_joy_node:
+  ros__parameters:
+    axis_linear:
+      x: 1
+    scale_linear:
+      x: 1.0
+    scale_linear_turbo:
+      x: 1.0
+
+    axis_angular:
+      yaw: 3
+    scale_angular:
+      yaw: 1.0
+
+    enable_button: 4  # LB shoulder button
+    enable_turbo_button: 0  # L1 shoulder button ?

@@ -1,0 +1,45 @@
+# 
+# param: ['package', 'launch_file']
+#
+# sensors/hardware/simulator
+all_components: ['ucsd_robocar_nav2_pkg', 'all_components.launch.py']
+simulator: ['ucsd_robocar_path2_pkg', 'f1_tenth_sim_launch.launch.py']
+
+# camera navigation
+camera_nav_calibration: ['ucsd_robocar_lane_detection2_pkg', 'camera_nav_calibration.launch.py']
+camera_nav: ['ucsd_robocar_lane_detection2_pkg', 'camera_nav.launch.py']
+
+# recording/bridging data 
+rosbag_launch: ['ucsd_robocar_nav2_pkg', 'rosbag_launch.launch.py']
+
+# TODO: Obstacle Avoidance
+simple_obstacle_detection_launch: ['ucsd_robocar_path2_pkg', 'simple_obstacle_detection_launch.launch.py']
+
+# rviz
+sensor_visualization: ['ucsd_robocar_nav2_pkg', 'sensor_visualization.launch.py']
+
+# control
+manual_joy_control_launch: ['ucsd_robocar_control2_pkg', 'manual_joy_control_launch.launch.py']
+f1tenth_vesc_joy_launch: ['ucsd_robocar_control2_pkg', 'f1tenth_vesc_joy_launch.launch.py']
+pid_e_launch: ['ucsd_robocar_control2_pkg', 'pid_e_launch.launch.py']
+pid_llh_launch: ['ucsd_robocar_control2_pkg', 'pid_llh_launch.launch.py']
+pid_servo_launch: ['ucsd_robocar_control2_pkg', 'pid_servo_launch.launch.py']
+lqr_launch: ['ucsd_robocar_control2_pkg', 'lqr_launch.launch.py']
+lqg_launch: ['ucsd_robocar_control2_pkg', 'lqg_launch.launch.py']
+lqg_w_launch: ['ucsd_robocar_control2_pkg', 'lqg_w_launch.launch.py']
+mpc_launch: ['ucsd_robocar_control2_pkg', 'mpc_launch.launch.py']
+pid_gps_launch: ['ucsd_robocar_control2_pkg', 'pid_gps_launch.launch.py']
+pid_gps_calibration_launch: ['ucsd_robocar_control2_pkg', 'pid_gps_calibration_launch.launch.py']
+
+# path planner
+path_nav: ['ucsd_robocar_path2_pkg', 'path_provider.launch.py']
+tube_follower_launch: ['ucsd_robocar_path2_pkg', 'tube_follower_launch.launch.py']
+curve_localizer_launch: ['ucsd_robocar_path2_pkg', 'curve_localizer_launch.launch.py']
+gps_nav_launch: ['ucsd_robocar_path2_pkg', 'gps_nav_launch.launch.py']
+
+
+# Basics
+sub_camera_launch: ['ucsd_robocar_basics2_pkg', 'sub_camera_launch.launch.py']
+sub_lidar_launch: ['ucsd_robocar_basics2_pkg', 'sub_lidar_launch.launch.py']
+subpub_camera_actuator_launch: ['ucsd_robocar_basics2_pkg', 'subpub_camera_actuator_launch.launch.py']
+subpub_lidar_actuator_launch: ['ucsd_robocar_basics2_pkg', 'subpub_lidar_actuator_launch.launch.py']

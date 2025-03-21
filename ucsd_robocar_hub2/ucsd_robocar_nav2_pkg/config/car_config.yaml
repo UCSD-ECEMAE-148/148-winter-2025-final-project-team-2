@@ -1,0 +1,22 @@
+
+sick: 0
+livox: 0
+bpearl: 0
+rp_lidar: 0
+ld06: 0
+webcam: 0
+intel: 0
+oakd: 1
+zed: 0
+artemis: 0
+ublox: 1
+nmea: 0
+vesc_with_odom: 1
+vesc_without_odom: 0
+adafruit: 0
+adafruit_servo: 0
+adafruit_continuous_servo: 0
+esp32: 0
+stm32: 0
+bldc_sensor: 0
+bldc_no_sensor: 0

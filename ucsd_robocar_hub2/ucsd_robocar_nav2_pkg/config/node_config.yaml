@@ -1,0 +1,46 @@
+# 
+# param: 1-on, 0-off
+#
+# sensors/hardware/simulator
+all_components: 1
+simulator: 0
+
+# camera navigation
+camera_nav_calibration: 0
+camera_nav: 0
+
+# recording data 
+rosbag_launch: 0
+
+# TODO: Obstacle Avoidance
+simple_obstacle_detection_launch: 0
+
+# rviz
+sensor_visualization: 0
+
+# control
+manual_joy_control_launch: 0
+f1tenth_vesc_joy_launch: 0
+pid_e_launch: 0
+pid_llh_launch: 0
+pid_servo_launch: 0
+lqr_launch: 0
+lqg_launch: 0
+lqg_w_launch: 0
+mpc_launch: 0
+pid_gps_calibration_launch: 0
+pid_gps_launch: 1
+
+# path planner
+path_nav_launch: 0
+tube_follower_launch: 0
+curve_localizer_launch: 0
+gps_nav_launch: 1
+
+
+# Basics
+sub_camera_launch: 0
+sub_lidar_launch: 0
+subpub_camera_actuator_launch: 0
+subpub_lidar_actuator_launch: 0
+

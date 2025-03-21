@@ -1,0 +1,9 @@
+# name of output rosbag
+rosbag_name: "ebu2_courtyard"
+
+# output rosbag file type (options: mcap, sqlite)
+rosbag_file_type: "mcap"
+
+# name of topics to record
+topics: 
+  - "/fix"

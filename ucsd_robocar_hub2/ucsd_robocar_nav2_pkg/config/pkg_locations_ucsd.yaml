@@ -1,0 +1,31 @@
+# 
+# param: ['package', 'launch_file', 'sensor_type', 'topics_published']
+#
+
+# Lidars
+sick : ['ucsd_robocar_sensor2_pkg', 'lidar_sicktim.launch.py','lidar', '/scan']
+livox : ['ucsd_robocar_sensor2_pkg','lidar_livox.launch.py','lidar', '/scan']
+bpearl : ['ucsd_robocar_sensor2_pkg','lidar_bpearl.launch.py','lidar', '/scan']
+rp_lidar : ['ucsd_robocar_sensor2_pkg', 'lidar_rp.launch.py','lidar', '/scan']
+ld06 : ['ucsd_robocar_sensor2_pkg','lidar_ld06.launch.py','lidar', '/scan']
+
+# IMU
+artemis: ['ucsd_robocar_sensor2_pkg', 'imu_artemis.launch.py', 'imu', '/imu_topic']
+
+# GPS
+ublox: ['ucsd_robocar_sensor2_pkg', 'gps_ublox.launch.py', 'gps','/fix']
+nmea: ['ucsd_robocar_sensor2_pkg', 'gps_nmea.launch.py', 'gps','/fix']
+
+# Cameras
+webcam: ['ucsd_robocar_sensor2_pkg', 'camera_webcam.launch.py', 'camera', '/camera/color/image_raw']
+intel: ['ucsd_robocar_sensor2_pkg', 'camera_intel.launch.py', 'camera', '/camera/color/image_raw']
+oakd: ['ucsd_robocar_sensor2_pkg', 'camera_oakd.launch.py', 'camera', '/camera/color/image_raw']
+
+# Odometry
+vesc_with_odom: ['ucsd_robocar_actuator2_pkg', 'vesc_odom.launch.py','motor', '/ackermann_drive']
+
+# Actuator
+vesc_without_odom: ['ucsd_robocar_actuator2_pkg', 'vesc_twist.launch.py','motor', '/cmd_vel']
+adafruit: ['ucsd_robocar_actuator2_pkg', 'adafruit_twist.launch.py','motor', '/cmd_vel']
+adafruit_servo: ['ucsd_robocar_actuator2_pkg', 'adafruit_servo.launch.py','motor', '/servo']
+adafruit_continuous_servo: ['ucsd_robocar_actuator2_pkg', 'adafruit_continuous_servo.launch.py','motor', '/continuous_servo']

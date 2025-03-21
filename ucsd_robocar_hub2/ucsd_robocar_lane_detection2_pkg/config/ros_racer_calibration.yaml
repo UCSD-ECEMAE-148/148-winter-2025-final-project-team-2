@@ -1,0 +1,74 @@
+lane_detection_node: 
+  ros__parameters: 
+    Hue_low : 21 
+    Hue_high : 35 
+    Saturation_low : 50 
+    Saturation_high : 233 
+    Value_low : 119 
+    Value_high : 255 
+    number_of_lines : 1 
+    error_threshold : 0.3 
+    Width_min : 16 
+    Width_max : 311 
+    gray_lower : 50 
+    inverted_filter : 0 
+    kernal_size : 7 
+    erosion_itterations : 0 
+    dilation_itterations : 1 
+    crop_width_decimal : 1.0 
+    rows_to_watch_decimal : 1.0 
+    rows_offset_decimal : 0.03 
+    camera_centerline : 0.49 
+calibration_node: 
+  ros__parameters: 
+    Hue_low : 21 
+    Hue_high : 35 
+    Saturation_low : 50 
+    Saturation_high : 233 
+    Value_low : 119 
+    Value_high : 255 
+    number_of_lines : 1 
+    error_threshold : 0.3
+    Width_min : 16 
+    Width_max : 311 
+    gray_lower : 50 
+    inverted_filter : 0 
+    kernal_size : 7 
+    erosion_itterations : 0 
+    dilation_itterations : 1 
+    crop_width_decimal : 1.0 
+    rows_to_watch_decimal : 1.0 
+    rows_offset_decimal : 0.03 
+    camera_centerline : 0.49 
+lane_guidance_node: 
+  ros__parameters: 
+    Kp_steering : 0.5 
+    Ki_steering : 0.0 
+    Kd_steering : 0.48 
+    zero_throttle  : 0.0 
+    max_throttle : 0.28
+    min_throttle : 0.2 
+    error_threshold : 0.1 
+    max_right_steering : 1.0 
+    max_left_steering : -1.0 
+vesc_twist_node: 
+  ros__parameters: 
+    max_rpm : 20000 
+    steering_polarity : 1 
+    throttle_polarity : 1 
+    zero_throttle  : 0.0 
+    max_throttle : 0.28
+    min_throttle : 0.2 
+    max_right_steering : 1.0 
+    straight_steering : 0.0 
+    max_left_steering : -1.0 
+adafruit_twist_node: 
+  ros__parameters: 
+    steering_polarity : 1 
+    throttle_polarity : 1 
+    zero_throttle  : 0.0 
+    max_throttle : 0.28 
+    min_throttle : 0.2 
+    max_right_steering : 1.0 
+    straight_steering : 0.0 
+    max_left_steering : -1.0 

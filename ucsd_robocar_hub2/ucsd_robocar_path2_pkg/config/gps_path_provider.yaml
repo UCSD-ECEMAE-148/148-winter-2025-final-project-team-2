@@ -1,0 +1,5 @@
+gps_path_provider_node:
+  ros__parameters:
+    timer_period: 0.05
+    frame_id: "map"
+    csv_path: "/home/projects/ros2_ws/src/ucsd_robocar_hub2/ucsd_robocar_path2_pkg/paths/ebu2_courtyard_man_2.csv"

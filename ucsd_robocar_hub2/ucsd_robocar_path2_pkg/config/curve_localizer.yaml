@@ -1,0 +1,9 @@
+curve_localizer_node: 
+  ros__parameters:
+    mode: 1
+    mapDir: [0.0]
+    sampleDist: 0.5
+    startIdx: 0
+    history_size: 1 # history size must be less than or equal to map window
+    laserFOV: 60.0
+    mapWindow: 1

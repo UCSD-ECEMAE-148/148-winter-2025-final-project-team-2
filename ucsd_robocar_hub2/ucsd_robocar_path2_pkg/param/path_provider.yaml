@@ -1,0 +1,4 @@
+/**:
+  ros__parameters:
+    timer: 0.05
+    frame_id: "map"

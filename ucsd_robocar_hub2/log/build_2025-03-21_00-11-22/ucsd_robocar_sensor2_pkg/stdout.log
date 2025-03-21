@@ -1,0 +1,62 @@
+running egg_info
+creating ../build/ucsd_robocar_sensor2_pkg/ucsd_robocar_sensor2_pkg.egg-info
+writing ../build/ucsd_robocar_sensor2_pkg/ucsd_robocar_sensor2_pkg.egg-info/PKG-INFO
+writing dependency_links to ../build/ucsd_robocar_sensor2_pkg/ucsd_robocar_sensor2_pkg.egg-info/dependency_links.txt
+writing entry points to ../build/ucsd_robocar_sensor2_pkg/ucsd_robocar_sensor2_pkg.egg-info/entry_points.txt
+writing requirements to ../build/ucsd_robocar_sensor2_pkg/ucsd_robocar_sensor2_pkg.egg-info/requires.txt
+writing top-level names to ../build/ucsd_robocar_sensor2_pkg/ucsd_robocar_sensor2_pkg.egg-info/top_level.txt
+writing manifest file '../build/ucsd_robocar_sensor2_pkg/ucsd_robocar_sensor2_pkg.egg-info/SOURCES.txt'
+reading manifest file '../build/ucsd_robocar_sensor2_pkg/ucsd_robocar_sensor2_pkg.egg-info/SOURCES.txt'
+writing manifest file '../build/ucsd_robocar_sensor2_pkg/ucsd_robocar_sensor2_pkg.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/projects/ros2_ws/src/ucsd_robocar_hub2/build/ucsd_robocar_sensor2_pkg/build
+creating /home/projects/ros2_ws/src/ucsd_robocar_hub2/build/ucsd_robocar_sensor2_pkg/build/lib
+creating /home/projects/ros2_ws/src/ucsd_robocar_hub2/build/ucsd_robocar_sensor2_pkg/build/lib/ucsd_robocar_sensor2_pkg
+copying ucsd_robocar_sensor2_pkg/__init__.py -> /home/projects/ros2_ws/src/ucsd_robocar_hub2/build/ucsd_robocar_sensor2_pkg/build/lib/ucsd_robocar_sensor2_pkg
+copying ucsd_robocar_sensor2_pkg/webcam_node.py -> /home/projects/ros2_ws/src/ucsd_robocar_hub2/build/ucsd_robocar_sensor2_pkg/build/lib/ucsd_robocar_sensor2_pkg
+copying ucsd_robocar_sensor2_pkg/ublox_gps_node.py -> /home/projects/ros2_ws/src/ucsd_robocar_hub2/build/ucsd_robocar_sensor2_pkg/build/lib/ucsd_robocar_sensor2_pkg
+running install
+running install_lib
+creating /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/lib/python3.8/site-packages/ucsd_robocar_sensor2_pkg
+copying /home/projects/ros2_ws/src/ucsd_robocar_hub2/build/ucsd_robocar_sensor2_pkg/build/lib/ucsd_robocar_sensor2_pkg/__init__.py -> /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/lib/python3.8/site-packages/ucsd_robocar_sensor2_pkg
+copying /home/projects/ros2_ws/src/ucsd_robocar_hub2/build/ucsd_robocar_sensor2_pkg/build/lib/ucsd_robocar_sensor2_pkg/webcam_node.py -> /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/lib/python3.8/site-packages/ucsd_robocar_sensor2_pkg
+copying /home/projects/ros2_ws/src/ucsd_robocar_hub2/build/ucsd_robocar_sensor2_pkg/build/lib/ucsd_robocar_sensor2_pkg/ublox_gps_node.py -> /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/lib/python3.8/site-packages/ucsd_robocar_sensor2_pkg
+byte-compiling /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/lib/python3.8/site-packages/ucsd_robocar_sensor2_pkg/__init__.py to __init__.cpython-38.pyc
+byte-compiling /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/lib/python3.8/site-packages/ucsd_robocar_sensor2_pkg/webcam_node.py to webcam_node.cpython-38.pyc
+byte-compiling /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/lib/python3.8/site-packages/ucsd_robocar_sensor2_pkg/ublox_gps_node.py to ublox_gps_node.cpython-38.pyc
+running install_data
+creating /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/share/ament_index
+creating /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/share/ament_index/resource_index
+creating /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/share/ament_index/resource_index/packages
+copying resource/ucsd_robocar_sensor2_pkg -> /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/share/ament_index/resource_index/packages
+copying package.xml -> /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/share/ucsd_robocar_sensor2_pkg
+creating /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/share/ucsd_robocar_sensor2_pkg/launch
+copying launch/lidar_rp.launch.py -> /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/share/ucsd_robocar_sensor2_pkg/launch
+copying launch/lidar_bpearl.launch.py -> /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/share/ucsd_robocar_sensor2_pkg/launch
+copying launch/imu_artemis.launch.py -> /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/share/ucsd_robocar_sensor2_pkg/launch
+copying launch/lidar_ld06.launch.py -> /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/share/ucsd_robocar_sensor2_pkg/launch
+copying launch/camera_oakd.launch.py -> /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/share/ucsd_robocar_sensor2_pkg/launch
+copying launch/lidar_livox.launch.py -> /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/share/ucsd_robocar_sensor2_pkg/launch
+copying launch/lidar_livox_mid360.launch.py -> /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/share/ucsd_robocar_sensor2_pkg/launch
+copying launch/lidar_sicktim.launch.py -> /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/share/ucsd_robocar_sensor2_pkg/launch
+copying launch/gps_ublox.launch.py -> /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/share/ucsd_robocar_sensor2_pkg/launch
+copying launch/gps_nmea.launch.py -> /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/share/ucsd_robocar_sensor2_pkg/launch
+copying launch/camera_webcam.launch.py -> /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/share/ucsd_robocar_sensor2_pkg/launch
+copying launch/camera_intel.launch.py -> /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/share/ucsd_robocar_sensor2_pkg/launch
+creating /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/share/ucsd_robocar_sensor2_pkg/config
+copying config/nmea_serial_driver.yaml -> /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/share/ucsd_robocar_sensor2_pkg/config
+copying config/my_razor.yaml -> /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/share/ucsd_robocar_sensor2_pkg/config
+copying config/ld06.yaml -> /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/share/ucsd_robocar_sensor2_pkg/config
+copying config/rp_lidar.yaml -> /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/share/ucsd_robocar_sensor2_pkg/config
+copying config/sick_tim_5xx.yaml -> /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/share/ucsd_robocar_sensor2_pkg/config
+creating /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/share/ucsd_robocar_sensor2_pkg/rviz
+copying rviz/display_point_cloud_ROS2.rviz -> /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/share/ucsd_robocar_sensor2_pkg/rviz
+copying config/livox_lidar_config.json -> /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/share/ucsd_robocar_sensor2_pkg/config
+copying config/livox_mid360_config.json -> /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/share/ucsd_robocar_sensor2_pkg/config
+running install_egg_info
+Copying ../build/ucsd_robocar_sensor2_pkg/ucsd_robocar_sensor2_pkg.egg-info to /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/lib/python3.8/site-packages/ucsd_robocar_sensor2_pkg-0.0.0-py3.8.egg-info
+running install_scripts
+Installing ublox_gps_node script to /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/lib/ucsd_robocar_sensor2_pkg
+Installing webcam_node script to /home/projects/ros2_ws/src/ucsd_robocar_hub2/install/ucsd_robocar_sensor2_pkg/lib/ucsd_robocar_sensor2_pkg
+writing list of installed files to '/home/projects/ros2_ws/src/ucsd_robocar_hub2/build/ucsd_robocar_sensor2_pkg/install.log'
