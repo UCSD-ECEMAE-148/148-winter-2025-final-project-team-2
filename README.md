@@ -40,7 +40,7 @@ Team 2 Winter 2025
         <li><a href="#original-goals">Original Goals</a></li>
           <ul>
             <li><a href="#goals-we-met">Goals We Met</a></li>
-            <li><a href="#our-hopes-and-dreams">Our Hopes and Dreams</a></li>
+            <li><a href="#our-hopes-and-dreams">If We Have Another Week...</a></li>
               <ul>
                 <li><a href="#stretch-goal-1">Stretch Goal 1</a></li>
                 <li><a href="#stretch-goal-2">Stretch Goal 2</a></li>
@@ -107,9 +107,9 @@ Originally, we proposed to create a robot that can follow the gps lap while avoi
 <p>
   At the end, we didn't show the completed demo of robot car avoiding pedestrian while following the lap, but we have every parts(camera and gps) completed separately.
 </p>
-<!--We were succesfully able to communicate with the robot. We can ask chatgpt what it saw around it. Often chatgpt went into multiple paragraphs. One test we did was telling chat gpt to drive towards the hand with more fingers up. We held out our hand with 2 fingers to the left, and 4 fingers to the right. Chatgpt sent a drive command to turn towards the right. We also were able to generate decent paths with chatgpt; at one point we asked it to make a heart path and it followed the path pretty well. We feel that large language models open up many emergent capabilities for robots, and that our overall project of giving chatgpt a level of autonomy was a success. We feel that if we ran our original test, that chatgpt would do decently well, except for navigating around tables. Often times durring the debugging process we would just ask chatgpt what data it had. For example, when debugging lidar, we would ask it what it thought of the data format, what could be improved, and what reference data it wanted from the user. All in all, its linguistic capabilities were superb. -->
 
-### Future Goals
+
+### If We Have Another Week...
 #### Stretch Goal 1
 Unfortunately we couldn't finish combining every part together for the robot car to avoid pedestrian while following the GPS path as we promised originally, but we have the GPS node and camera node completed in ROS2, we just need to make some changes to "gps_path_provider_node.py" under ucsd_robocar_hub2/ucsd_robocar_path2_pkg/ucsd_robocar_path2_pkg
 / to activate conditions of path change based on the "oakd_node.py" which publishes the detection data. We will put the possible changes of the file inside the folder /possible_implementation to achieve that.
@@ -191,7 +191,7 @@ Copy paste your own file here:
 
 ### Notice that your .csv file has to have the format of "lat,lon,alt" as the column name, for example:
 <p>
-lat,lon,alt
+lat,    lon,     alt
 </p>
 <p>
 37.7749,-122.4194,30.0
@@ -214,29 +214,27 @@ Step 5: Finally, to get the car running on your custom path:
 
 
 Youtube link of our robot following EBU courtyard(small circle in the middle):
+<a href= "https://www.youtube.com/shorts/zIVCutLHt0U">Demo Video of car running on GPS</a>
 
+Slides are also published onto this repository.
 
 <!-- Authors -->
 ## Authors
-<!--
-![image](https://github.com/UCSD-ECEMAE-148/winter-2024-team-2aka8/blob/main/media/148groupphoto.jpg)
--->
-<!-- Badges -->
-<!--
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
--->
+
+Andrew N, Daphne, Jose, and Rodolfo
+
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
-<!--
-*Thank you to my teammates, Professor Jack Silberman, and our incredible TA Arjun Naageshwaran for an amazing Winter 2024 class! Thank you Kiersten for the amazing readme template.*
--->
+
+*Big thanks to Professor Jack Silberman, our TA Alexander Haken and Winston Chou, you guys are super amazing and helpful! Thank you Alexander for the readme template.*
+
 
 <!-- CONTACT -->
 ## Contact
-<!--
-* Jason | yul202@ucsd.edu
-* Jesse | jerupe@ucsd.edu 
-* Maahir | masgharali@ucsd.edu
-* Alexander | ahaken@ucsd.edu
--->
+
+* Andrew | ann054@ucsd.edu
+* Daphne | hsc021@ucsd.edu 
+* Jose
+* Rodolfo | rpgonzalez@ucsd.edu
+
