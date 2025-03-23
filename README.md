@@ -112,7 +112,7 @@ Originally, we proposed to create a robot that can follow the gps lap while avoi
 ### If We Have Another Week...
 #### Stretch Goal 1
 Unfortunately we couldn't finish combining every part together for the robot car to avoid pedestrian while following the GPS path as we promised originally, but we have the GPS node and camera node completed in ROS2, we just need to make some changes to "gps_path_provider_node.py" under ucsd_robocar_hub2/ucsd_robocar_path2_pkg/ucsd_robocar_path2_pkg
-/ to activate conditions of path change based on the "oakd_node.py" which publishes the detection data. We will put the possible changes of the file inside the folder /possible_implementation to achieve that.
+/ to activate conditions of path re-routing based on the "oakd_node.py" which publishes the detection data, so the robot car can turn either left or right and then go back into the original path, we would need to have a separate PID for this as well.
 
 <!-- We want to have chatgpt's path following trigger the manage.py drive command automatically so that chatgpt can navigate fully autonomous. We also want to have chatgpt only use one model instead of two seperated models. Finally, we want to turn the lidar data into a SLAM map and feed chatgpt an image map of its surroundings to generate better maps. -->
 
