@@ -1,7 +1,7 @@
 # UCSD ECEMAE148 Team2 FinalProject
 
 <img src="ucsd_ros2_logos.png">
-<img src="ublox.jpg" width="300" height="300">
+<img src="ublox.jpg" width="150" height="150">
 
 <div>
 <h3>This is the github repo for Team2, we mainly focused on recovering Ublox GPS in ROS2. </h3>
@@ -9,10 +9,7 @@
   <p>
   In the original github repository from <a href="https://gitlab.com/ucsd_robocar2/ucsd_robocar_hub2">ucsd_robocar_hub2</a>, but it dosen't have the functionality of running gps inside the docker container(ROS2). Therefore, we implemented the node for ublox gps from scratch to work with the existing files for the robot to follow gps coordinates. It would be useful for future classes.
   </p>
-  <p>
-  To get started, click into /ucsd_robocar_hub2 folder and you can see a lot of packages listed. This is the main flow of the nodes interect with each other when we tested the gps: (placeholder of the block diagram).
-  </p>
-  <p>As mentioned in the final presentation, we found out the original packages is missing a ublox gps node to connect to the gps, therefore we added a node called "ublox_gps_node.py" under the directory ucsd_robocar_hub2/ucsd_robocar_sensor2_pkg/ucsd_robocar_sensor2_pkg/, as well as did a series of testing to see if the node was interecting with the others while sending correct data.</p>
+  
 </body>
 
 
@@ -101,9 +98,9 @@ Originally, we proposed to create a robot that can follow the gps lap while avoi
 <!-- End Results -->
 ### Goals We Met
 <p>
-  The gps was setup inside the donkey environment, which is outside of ROS2(docker container). We struggled to make ROS2 communicate with the gps outside of the docker environment especially doing rerouting of the gps lap when a pedestrian is detected. Therefore, we decidced to make gps works inside ROS2 instead of in the donkey environment, and this has become our top priority since it would be a lot easier to use for the future classes. To do so, we figured the general workflow of the packages and nodes provided inside docker contianer, and we ended up pulling the original github repository from <a href="https://gitlab.com/ucsd_robocar2/ucsd_robocar_hub2">ucsd_robocar_hub2</a> to get necessary nodes. We found that it was missing the node of reading from gps, so we implemented the node for ublox gps from scratch called "ublox_gps_node.py" under the directory ucsd_robocar_hub2/ucsd_robocar_sensor2_pkg/ucsd_robocar_sensor2_pkg/. We did a series of testing of the gps node to work with the existing files for the robot to follow gps coordinates. The overall workflow is shown below.
+  The gps was setup inside the donkey environment, which is outside of ROS2(docker container). We struggled to make ROS2 communicate with the gps outside of the docker environment especially doing rerouting of the gps lap when a pedestrian is detected. Therefore, we decidced to make gps works inside ROS2 instead of in the donkey environment, and this has become our top priority since it would be a lot easier to use for the future classes. To do so, we figured the general workflow of the packages and nodes provided inside docker contianer, and we ended up pulling the original github repository from <a href="https://gitlab.com/ucsd_robocar2/ucsd_robocar_hub2">ucsd_robocar_hub2</a> to get necessary nodes. We found that it was missing the node of reading from gps, so we implemented the node for ublox gps from scratch called "ublox_gps_node.py" under the directory ucsd_robocar_hub2/ucsd_robocar_sensor2_pkg/ucsd_robocar_sensor2_pkg/. We did a series of testing of the gps node to work with the existing files for the robot to follow gps coordinates. The overall workflow detail will be discussed in the Final Project Documentation sectoion.
 </p>
-  <img src="block_diagram.png">
+
 <p>
   On the camera side, we self trained a model on roboflow to detect pedestrian by detecting any "foot" appearing in front of the oakd camera. This would be easier for camera to see if there is any people right in front of the camera instead of looking from a long distance to record a whole person. We created a package in ROS2 for the camera called "oakd_node.py" under ucsd_robocar_hub2/oakd_ros2/oakd_ros2/ to send detection message of "left", "right", or "none" to indicate which direction the pedestrian is moving, so the robocar can change its route accordingly.
 </p>
@@ -141,60 +138,77 @@ The system is running based on jetson nano and oakd-lite camera.
 <!--To run the system, we used a Jetson Nano with an Oakd depth camera, an ld06 lidar sensor, and a point one Fusion Engine gps. For motion we used a VESC Driver within the Donkey Car framework. https://www.donkeycar.com/-->
 
 #### ROS2
+<p>
 In this section we will specifically show the steps to set-up GPS in ROS2.
+</p>
+<p>
+  To get started, click into /ucsd_robocar_hub2 folder and you can see a lot of packages listed. Below is the main flow of the nodes interect with each other when we tested the gps:
+</p>
+  <img src="block_diagram.png">
+<p>
+  
+</p>
 
 
-<!--For commands, we made a ROS2 Node called ChatgptDriveSubpub that works with the UCSD Robocar framework. Most of the files we created are in the basics2 package of the ros2_ws (ros2 workspace). We altered the nav2 config files to add the chatgpt node to start up automatically, but never finished this. So, if you follow the steps to get Ros2 running from the UCSD robocar framework, you are mostly complete.-->
-
-<!--In our project files, we had to add the fusion engine driver for gps manually, so the nodes for fusion gps are prone to error. One will need 4 to 5 terminals to run this system. One for starting up gps, one for launching all_nodes, one for launching the chatgpt node, one for sending chatgpt messeges over a chat topic, and finally one to use donkeycar's manage.py drive command to drive the car in a desired path. -->
 
 
-
-<!--
 ### How to Run
-Use the UCSD Robocar Docker images and add the projects folder yourself. Python3 is required, install any reposotries not there.
+Use the UCSD Robocar Docker images. Python3 is required, you might need to install other dependencies if needed.
 
-Step 1: In the first terminal, start the fusion client. First source ros2. Note, in the build_ros2 file, we exluded the build for the fusion client as each build takes an extra 50 seconds with it.
+Step 1: Once you setup your docker container, open a terminal, go into the docker container.
+
+```docker start name_of_your_container```
+
+```docker exec -it name_of_your_container bash```
+
+```source_ros2```
+
+Clone this repository into ros2_ws.
+
+```git clone https://github.com/UCSD-ECEMAE-148/148-winter-2025-final-project-team-2.git```
+
+```build_ros2```
+
+Step 2: Then, you can have a quick start to run the robot car at the EBU courtyard!
+
+Since this is an extension of the github repository from <a href="https://gitlab.com/ucsd_robocar2/ucsd_robocar_hub2">ucsd_robocar_hub2</a>, the default path file on the repository is a small circle inside the courtyard of EBU building. 
+This is the image showing the default path being used:
+
+ <img src="EBUcourtyard.png" width="269.7" height="87.84">
+ 
+To start your robot car to follow the path, simply run:
+
+```ros2 launch ucsd_robocar_nav2_pkg all_nodes.launch.py```
+
+
+Step 3: If you would like to change the gps lap for your robot car to run on, you can put your recorded .csv file inside /home/projects/ros2_ws/ebu2_courtyard/ebu2_courtyard_man_2.csv
+
+```cd /home/projects/ros2_ws/ebu2_courtyard```
+
+Copy paste your own file here:
+
+```nano ebu2_courtyard_man_2.csv```
+
+### Notice that your .csv file has to have the format of "lat,lon,alt" as the column name, for example:
+
+lat,lon,alt
+37.7749,-122.4194,30.0
+34.0522,-118.2437,100.5
+40.7128,-74.0060,50.2
+
+
+Step 5: Finally, to get the car running on your custom path:
 
 ```source_ros2```
 
 ```build_ros2```
 
-```ros2 run fusion-engine-driver fusion_engine_ros_driver --ros-args -p connection_type:=tty -p tty_port:=/dev/ttyUSB1```
+```ros2 launch ucsd_robocar_nav2_pkg all_nodes.launch.py ```
 
 
-Step 2: In a second terminal, build and source ros2 as usual from the ucsd robocar process. Then launch all nodes.
-
-```source_ros2```
-
-```ros2 launch ucsd_robocar_nav2_pkg all_nodes.launch.py```
+Youtube link of our robot following EBU courtyard(small circle in the middle):
 
 
-Step 3: Adjust the chatgpt_drive_node.py in the basics package with your OPENAI API KEY. Launch the chatgpt node. Source ros2 in a third terminal and launch this command.
-
-```source_ros2```
-
-```ros2 launch ucsd_robocar_basics2_pkg chatgpt_drive_launch.launch.py```
-
-
-Step 4: You are ready to talk to chatgpt. Make sure the terminals output no errors and chatgpt has said "finished init". Then, you publish to a /chat_input topic to communicate with the chatgpt node.
-
-```source_ros2```
-
-```ros2 topic pub -1 /chat_input std_msgs/msg/String "data: 'YOUR MESSEGE HERE'"```
-
-
-The messege should show up in the chatgpt terminal and if it does not, it did not work. First the vision model will respond with an action plan. Responses can take up to 20 seconds. Then a Function tool caller will work. Sometimes the tool caller gets stuck and you must restart the chatgpt node. Its recommended to restart all nodes, as another error can be no image input being recieved from the all_nodes.
-
-Step 5: If you desire a path to be made, then chatgpt will have outputed the path to the donkey_paths folder in the basics2 package. You can take this csv, and use its path in the donkey car manage.py config files for donkey car to drive on this desired path. Make sure your path starts at 0,0 or to zero the car and drive to the path start. The donkey command to run in a 5th terminal is
-
-```manage.py drive ```
-
-For more information, see the donkey car framework on running with your own car. When manage.py runs, use x to zero the car, b to load a path, and double tap start for the car to follow the path.
-
-Here is a link which contains many photos and videos of our robot doing different chatgpt powered actions:
-https://photos.google.com/u/0/share/AF1QipNbnRdItg1uGULNdo4saggAoKI3nbOa-YogXLWNfc9HYORkTFDVzfL07XVTVJIqRg?key=WGtpSk1jdEJXZjJ6cHpObENFQU9MSzItVG1jOXN3 
--->
 <!-- Authors -->
 ## Authors
 <!--
