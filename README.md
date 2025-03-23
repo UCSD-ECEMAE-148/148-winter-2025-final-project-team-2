@@ -15,7 +15,7 @@
 
 <div id="top"></div>
 
-<h1 align="center">Pedestrian Avoidence Robot Car</h1>
+<h1 align="center">Pedestrian Avoidence Robot Car/GPS on ROS2 Docker</h1>
 <h4 align="center"></h4>
 <!-- PROJECT LOGO -->:
 <br />
