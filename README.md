@@ -26,7 +26,8 @@
 Team 2 Winter 2025
 </p>
 
-<!-- ![image](https://github.com/JL2200/mae148_group8/blob/main/media/IMG_4898.JPG) -->
+<img src="robocar.jpg">
+
 </div>
 
 
@@ -102,7 +103,8 @@ Originally, we proposed to create a robot that can follow the gps lap while avoi
 </p>
 
 <p>
-  On the camera side, we self trained a model on roboflow to detect pedestrian by detecting any "foot" appearing in front of the oakd camera. This would be easier for camera to see if there is any people right in front of the camera instead of looking from a long distance to record a whole person. We created a package in ROS2 for the camera called "oakd_node.py" under ucsd_robocar_hub2/oakd_ros2/oakd_ros2/ to send detection message of "left", "right", or "none" to indicate which direction the pedestrian is moving, so the robocar can change its route accordingly.
+  On the camera side, we self trained a model on roboflow to detect pedestrian by detecting any "foot" appearing in front of the oakd camera. This would be easier for camera to see if there is any people right in front of the camera instead of looking from a long distance to record a whole person. We created a package in ROS2 for the camera called "oakd_node.py" under ucsd_robocar_hub2/oakd_ros2/oakd_ros2/ to send detection message of "left", "right", or "none" to indicate which direction the pedestrian is moving, so the robocar can change its route accordingly. The picture below shows an example of the detection message being sent(also included in the presentation slides).
+  <img src="oakD_detection.png">
 </p>
 <p>
   At the end, we didn't show the completed demo of robot car avoiding pedestrian while following the lap, but we have every parts(camera and gps) completed separately.
