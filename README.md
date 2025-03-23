@@ -174,7 +174,7 @@ Step 2: Then, you can have a quick start to run the robot car at the EBU courtya
 Since this is an extension of the github repository from <a href="https://gitlab.com/ucsd_robocar2/ucsd_robocar_hub2">ucsd_robocar_hub2</a>, the default path file on the repository is a small circle inside the courtyard of EBU building. 
 This is the image showing the default path being used:
 
- <img src="EBUcourtyard.png" width="269.7" height="87.84">
+ <img src="EBUcourtyard.png" width="269.7" height="100">
  
 To start your robot car to follow the path, simply run:
 
@@ -190,11 +190,18 @@ Copy paste your own file here:
 ```nano ebu2_courtyard_man_2.csv```
 
 ### Notice that your .csv file has to have the format of "lat,lon,alt" as the column name, for example:
-
+<p>
 lat,lon,alt
+</p>
+<p>
 37.7749,-122.4194,30.0
+</p>
+<p>
 34.0522,-118.2437,100.5
+</p>
+<p>
 40.7128,-74.0060,50.2
+</p>
 
 
 Step 5: Finally, to get the car running on your custom path:
