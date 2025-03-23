@@ -174,7 +174,7 @@ Step 2: Then, you can have a quick start to run the robot car at the EBU courtya
 Since this is an extension of the github repository from <a href="https://gitlab.com/ucsd_robocar2/ucsd_robocar_hub2">ucsd_robocar_hub2</a>, the default path file on the repository is a small circle inside the courtyard of EBU building. 
 This is the image showing the default path being used:
 
- <img src="EBUcourtyard.png" width="269.7" height="100">
+ <img src="EBUcourtyard.png" >
  
 To start your robot car to follow the path, simply run:
 
